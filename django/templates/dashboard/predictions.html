@@ -1,0 +1,36 @@
+{% extends 'partials/base.html' %}
+
+		{%block title %} List Predictions {%endblock%}
+
+		{% block content %}
+			<div class="container">
+				<div class="row mt-4">
+					<div class="col-md-8 offset-md-2">
+						
+						<table class="table">
+							<thead>
+							  <tr>
+								<th scope="col">Surface</th>
+								<th scope="col">Ville</th>
+								<th scope="col">prix_mettre</th>
+								<th scope="col">Variation</th>
+								<th scope="col">Prediction</th>
+							  </tr>
+							</thead>
+							<tbody>
+							  {% for data in predicted_sports%}
+							  <tr>
+								<th scope="row">{{data.surface}}</th>
+								<td>{{data.ville}}</td>
+								<td>{{data.prix_mettre}}</td>
+								<td>{{data.varation}}</td>
+								<td>{{data.predictions}}</td>
+							  </tr>
+							  {% endfor %}
+							</tbody>
+						  </table>
+
+					</div>
+				</div>
+			</div>
+		{%endblock%}
